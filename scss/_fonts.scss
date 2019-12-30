@@ -1,0 +1,22 @@
+// font-family: 'Play', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+
+@mixin playR {
+  font-family: "Play", sans-serif;
+  font-weight: normal;
+}
+
+@mixin playB {
+  font-family: "Play", sans-serif;
+  font-weight: bold;
+}
+
+@mixin openR {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+
+@mixin openB {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}

@@ -1,0 +1,85 @@
+.header-top {
+  height: 50px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.09);
+  background-color: #fffdfd;
+  padding-top: 17px;
+  margin-bottom: 30px;
+  @include playR;
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-social {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    &__icon {
+      width: 15px;
+      height: 15px;
+    }
+    &__link {
+      fill: $gray-color;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+      -ms-transition: 0.2s;
+      -o-transition: 0.2s;
+      &:hover {
+        fill: $primary-color;
+      }
+    }
+  }
+  &-info {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1px;
+    color: $allText;
+    &__time,
+    &__email,
+    &__phone {
+      display: flex;
+      align-items: center;
+    }
+    &__link {
+      color: $allText;
+    }
+  }
+  &__icon-i {
+    width: 15px;
+    height: 15px;
+    fill: $primary-color;
+    margin-right: 10px;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .header-top {
+    height: 70px;
+    &-inner {
+      flex-direction: column;
+      height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header-top {
+    height: 160px;
+    &-inner {
+      flex-direction: column;
+    }
+    &-info {
+      width: 300px;
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      &__time, &__phone {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

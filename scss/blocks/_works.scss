@@ -1,0 +1,100 @@
+.works {
+  padding: 80px 0 115px;
+  &-slider {
+    &__item {
+      cursor: pointer;
+      outline: none;
+    }
+    &__img {
+      max-width: 360px;
+      max-height: 240px;
+      position: relative;
+      z-index: 2;
+      img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        background: rgba($primary-color, 0.5);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: none;
+        z-index: 7;
+      }
+      &::after {
+        content: "";
+        background: url("../img/works/search-plus.svg");
+        width: 26px;
+        height: 26px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 30;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        display: none;
+      }
+      &:hover {
+        &::before,
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    position: absolute;
+    z-index: 3;
+    right: 6px;
+    bottom: -40px;
+    cursor: pointer;
+    background: $primary-color;
+    border: none;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    padding-top: 4px;
+  }
+  .slick-prev {
+    right: 40px;
+  }
+  .slick-list {
+    margin-right: -20px;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  .works {
+    .slick-list {
+      margin-right: -10px;
+    }
+  }
+  .works-slider {
+    &__item {
+      max-width: 100%;
+    }
+    &__img {
+      margin-right: 18px;
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .works-slider {
+    &__img {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "blocks/header_top";
+@import "blocks/header_bottom";
+@import "blocks/intro";
+@import "blocks/features";
+@import "blocks/works";
+@import "blocks/numbers";
+@import "blocks/blog";
+@import "blocks/getInTouch";
+@import "blocks/footer";
+
+body {
+  @include openR;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  color: $white-color-text;
+  font-size: 14px;
+  text-transform: uppercase;
+  @include playR;
+  border: 1px solid $white-color;
+  background: none;
+  padding: 15px 40px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  &:hover {
+    background: $primary-color;
+    border-color: $primary-color;
+    cursor: pointer;
+  }
+  &-w {
+    &:hover {
+      background: $white-color;
+      color: $primary-color-text;
+    }
+  }
+}
+
+.title-section {
+  color: $primary-color-text;
+  font-family: Play;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 31px;
+  text-transform: uppercase;
+  margin-top: 0;
+  &::after {
+    content: "";
+    width: 70px;
+    height: 2px;
+    background: $primary-color;
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+.mb {
+  margin-bottom: 15px;
+}

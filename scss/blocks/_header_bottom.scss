@@ -1,0 +1,136 @@
+.header-bottom {
+  margin-bottom: 30px;
+  @include playR;
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+      width: 150px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &__menu {
+      width: 520px;
+      display: flex;
+      justify-content: space-between;
+      &-link {
+        text-transform: uppercase;
+        color: $allText;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        &:hover {
+          color: $primary-color-text;
+        }
+        &--active {
+          color: $primary-color-text;
+        }
+      }
+    }
+  }
+}
+
+.h-menu {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .header-bottom {
+    &-inner {
+      &__menu {
+        display: none;
+        &-link {
+          display: block;
+          padding: 25px 0 25px 90px;
+        }
+      }
+      &__menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        width: 100%;
+        background: #f2f2f2;
+        text-align: center;
+        z-index: 20;
+        padding: 183px 0;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+      }
+      &__menu.active {
+        left: -110px;
+      }
+    }
+  }
+
+  .h-wrap {
+    padding: 9px 2px;
+    cursor: pointer;
+  }
+
+  .h-menu {
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    outline: none;
+    display: block;
+    border: none;
+    background: $primary-color;
+    width: 25px;
+    height: 3px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 50;
+    &::before,
+    &::after {
+      transition: all 0.3s linear;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+
+      content: "";
+      width: 25px;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      bottom: 7px;
+      background: $primary-color;
+    }
+    &::after {
+      top: 7px;
+    }
+  }
+}
+
+.h-menu.active {
+  background: transparent;
+  &::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    top: 0;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    top: 0;
+  }
+}
